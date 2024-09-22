@@ -1,0 +1,54 @@
+# Evitare di versionare i file di log
+*.log
+
+# Chiavi SSH
+*.pem
+*.pub
+
+# File temporanei
+*.tmp
+*.swp
+*.swo
+
+# File di inventory dinamici
+inventory/*
+!inventory/example_inventory.ini  # Mantieni un esempio
+
+# Credenziali e file di configurazione sensibili
+.vault_pass.txt
+*.vault
+
+# File Ansible temporanei o di output
+*.retry
+*.out
+
+# Environment virtuali (se usi virtualenv)
+venv/
+env/
+
+# Ruoli scaricati tramite Ansible Galaxy
+roles/*/
+!roles/requirements.yml  # Mantieni il file che descrive le dipendenze
+
+# Dati di macchine virtuali
+.vagrant/
+.vagrant.d/
+
+# File relativi a configurazioni locali
+*.cfg
+*.yml~
+
+# Chiavi di API o altre credenziali
+*.key
+*.secrets
+
+# Configurazioni personalizzate di Ansible
+host_vars/*.yml
+group_vars/*.yml
+!host_vars/example.yml  # Mantieni un esempio
+!group_vars/example.yml  # Mantieni un esempio
+
+# File di backup o specifici dell'IDE
+*.bak
+.idea/
+*.vscode/
