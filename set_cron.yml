@@ -1,0 +1,42 @@
+---
+- name: Configurare Cron su OPNSense
+  hosts: opnsense
+  connection: local
+  gather_facts: no
+  vars_files:
+    - api_credentials.yml
+  # module_defaults:
+  #   group/ansibleguy.opnsense.all:
+  #     firewall: 'opnsense.pind'
+     
+  # tasks:
+  #   - name: Impostare un job di cron per riavviare il sistema alle 6 del mattino
+  #     ansibleguy.opnsense.cron:
+  #       description: 'Riavvia sistema su CRON'
+  #       command: "system reboot"
+  #       state: absent
+  #       minutes: "0"
+  #       hours: "6"
+  #       days: '*'
+  #       api_key: "{{ key }}"
+  #       api_secret: "{{ secret }}"
+  #       firewall: "192.168.50.1"
+  #       ssl_verify: false
+
+  tasks:
+    - name: riavviare le interfacce
+      ansibleguy.opnsense.cron:
+        description: 'riavviare le interfacce'
+        command: "interface reconfigure"
+        state: absent
+        minutes: "0"
+        hours: "6"
+        days: '*'
+        api_key: "{{ key }}"
+        api_secret: "{{ secret }}"
+        firewall: "192.168.50.1"
+        ssl_verify: false
+        
+        
+        
+  

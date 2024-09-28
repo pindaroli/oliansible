@@ -36,7 +36,6 @@ roles/*/
 
 # File relativi a configurazioni locali
 *.cfg
-*.yml~
 
 # Chiavi di API o altre credenziali
 *.key
